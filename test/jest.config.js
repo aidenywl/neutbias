@@ -12,6 +12,8 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
+  // Bridges the gap between Jest and webpack by creating a mock CSS module when a CSS file is imported.
+  // This returns the expected class names when we use css-modules.
   moduleNameMapper: {
     '\\.(css)$': 'identity-obj-proxy',
   },
