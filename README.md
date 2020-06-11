@@ -24,3 +24,19 @@ A Typescript boilerplate repository with Typescript, Webpack, CSS Modules, set u
 1. Pull the repository
 2. Run `yarn` to install all packages.
 3. Run `yarn start` and go to your browser to see the starting website.
+
+## What's included in the boilerplate?
+
+### Development
+
+- Typescript modules and all relevant react modules for development with typescript are installed.
+- Webpack is configured to build and serve Typescript and CSS files.
+- Babel is set up for ES6 syntax.
+- CSS Loader and POSTCSS Loader is used to shift away from global css and localized css for each component.
+- Further CSS set-up: `autoprefixer` and `autoprefixer` normalizes styles for each browser and takes away the trouble of writing specific css classes for each browser
+
+### Testing Framework
+
+- Jest is set up and ready to go via `yarn test`.
+- React Testing Library is used to write tests instead of enzyme for flexibility and being able to better simulate the DOM as seen by a user.
+- Using RTL allows us to move away from snapshot testing and test each component mocking components as required.
