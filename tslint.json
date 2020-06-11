@@ -72,5 +72,8 @@
     "no-parameter-properties": false,
     "variable-name": [false, "check-format", "allow-leading-underscore", "ban-keywords"]
   },
-  "rulesDirectory": ["tslint-plugin-prettier"]
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "jest": {
+    "preset": "jest-runner-tslint"
+  }
 }

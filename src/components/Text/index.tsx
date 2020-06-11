@@ -1,9 +1,13 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 
-import styles from "./styles.css";
+import styles from './styles.css';
 
-const Text: FunctionComponent<{ value: string }> = ({ value = "" }) => {
-  return <h1 className={styles.header}>{value}</h1>;
+export interface Props {
+  value: string;
+}
+
+const Text: FunctionComponent<Props> = (props) => {
+  return <h1 className={styles.header}>{props.value}</h1>;
 };
 
 export default Text;
