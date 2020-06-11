@@ -1,6 +1,8 @@
 # Typescript Webpack React Boilerplate
 
-A Typescript boilerplate repository with Typescript, Webpack, CSS Modules, set up for React Development along with Linting and Prettier already set-up to jump right into development.
+A Typescript boilerplate repository with Typescript, Webpack, CSS Modules, and React Testing library set up to jump right into Typescript React development. Linting with `tslint` and `prettier` has also been set up.
+
+I created this to serve as a boilerplate for frontend projects that come to mind in the future. Feel free to use it for any of your own projects!
 
 ## Getting Started
 
