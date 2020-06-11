@@ -9,7 +9,7 @@ class App extends React.PureComponent {
   render() {
     return (
       <div className={styles.background}>
-        <Text />
+        <Text value={'Typescript + Webpack + React + Jest'} />
       </div>
     );
   }

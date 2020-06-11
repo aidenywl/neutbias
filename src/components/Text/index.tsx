@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { FunctionComponent } from "react";
 
-import styles from './styles.css';
+import styles from "./styles.css";
 
-class Text extends React.PureComponent {
-  render() {
-    return <h1 className={styles.header}>Hello World!</h1>;
-  }
-}
+const Text: FunctionComponent<{ value: string }> = ({ value = "" }) => {
+  return <h1 className={styles.header}>{value}</h1>;
+};
 
 export default Text;
