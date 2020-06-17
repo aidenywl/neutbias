@@ -1,0 +1,63 @@
+.text {
+  overflow: hidden;
+  hyphens: auto;
+  text-overflow: ellipsis;
+}
+
+.colorDarkBlue {
+  color: $darkBlue;
+}
+
+.colorDarkGrey {
+  color: $darkGrey;
+}
+
+.colorLightGrey {
+  color: $lightGrey;
+}
+
+.colorStandardGrey {
+  color: $standardGrey;
+}
+
+.decorationNone {
+  text-decoration: none;
+}
+
+.overflowBreakWord {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.overflowNormal {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.singleline {
+  white-space: nowrap;
+}
+
+.multiline {
+  white-space: normal;
+}
+
+.textAlignCenter {
+  text-align: center;
+}
+
+.textAlignLeft {
+  text-align: left;
+}
+
+.textAlignRight {
+  text-align: right;
+}
+
+.weightRegular {
+  font-weight: 400;
+}
+
+.weightSemibold {
+  font-weight: 600;
+}
