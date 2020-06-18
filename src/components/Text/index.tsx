@@ -6,7 +6,7 @@ import styles from './styles.css';
 export interface Props {
   children: string;
   className?: string;
-  color?: 'darkBlue' | 'darkGrey' | 'lightGrey' | 'standardGrey';
+  color?: 'darkBlue90' | 'darkGrey' | 'lightGrey' | 'standardGrey';
   decoration?: 'none';
   inline?: boolean;
   overflow?: 'normal' | 'breakWord';
@@ -32,7 +32,7 @@ const Text: FunctionComponent<Props> = ({
     const commonClassNames = [
       styles.text,
       {
-        [styles.colorDarkBlue]: color === 'darkBlue',
+        [styles.colorDarkBlue90]: color === 'darkBlue90',
         [styles.colorDarkGrey]: color === 'darkGrey',
         [styles.colorLightGrey]: color === 'lightGrey',
         [styles.colorStandardGrey]: color === 'standardGrey',
