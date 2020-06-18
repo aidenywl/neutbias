@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.textAreaWrapper {
+  position: relative;
+  display: flex;
+  flex: 1;
+  padding: $spacing12 $spacing16;
+  border: 1px solid $lightGrey;
+  border-radius: $spacing4;
+}
+
+.textAreaWrapper:focus-within {
+  border: 1px solid $darkBlue90;
+  box-shadow: 0 0 0 $spacing4 $darkBlue20;
+}
+
+.textArea {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: $darkBlue90;
+  background: transparent;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+}
+
+.textArea:disabled {
+  cursor: not-allowed;
+}
+
+.textArea::placeholder {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+textArea:disabled {
+  color: $darkGrey;
+}
+
+.textArea:focus {
+  outline: none;
+}
+
+.textAreaResizeNone {
+  resize: none;
+}
+
+.textAreaResizeVertical {
+  resize: vertical;
+}
+
+.label {
+  position: absolute;
+  color: $darkBlue90;
+  pointer-events: none;
+  background: transparent;
+  transition: transform 0.25s ease, font-size 0.25s ease;
+  top: $spacing12;
+  left: $spacing12;
+  padding: 0 $spacing4;
+}
+
+.labelMinimized {
+  transform: translateY(-$spacing36);
+}
