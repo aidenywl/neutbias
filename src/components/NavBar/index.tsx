@@ -1,16 +1,15 @@
 import React, { FunctionComponent } from 'react';
 
+import Heading from '../Heading';
+
 import styles from './styles.css';
 
 const NavBar: FunctionComponent<{}> = () => {
   return (
     <nav className={styles.container}>
-      <a className={styles.title} href="#">
-        NEUTRALIZE BIAS
-      </a>
       <div className={styles.about}>
         <a href="#">
-          <span>ABOUT</span>
+          <Heading level="2">ABOUT</Heading>
         </a>
       </div>
     </nav>

@@ -1,9 +1,11 @@
 module.exports = {
   /** Spacing (Multipliers of 4) */
   spacing4: '4px',
+  spacing8: '8px',
   spacing12: '12px',
   spacing16: '16px',
   spacing24: '24px',
+  spacing32: '32px',
   spacing36: '36px',
   spacing48: '48px',
 

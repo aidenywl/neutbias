@@ -6,7 +6,7 @@ import styles from './styles.css';
 export interface Props {
   children: string;
   className?: string;
-  color?: 'darkBlue90' | 'darkGrey' | 'lightGrey' | 'standardGrey';
+  color?: 'darkBlue90' | 'darkGrey' | 'lightGrey' | 'standardGrey' | 'white70';
   hyphensNone?: boolean;
   inline?: boolean;
   level?: '1' | '2' | '3';
@@ -38,6 +38,7 @@ const Heading: FunctionComponent<Props> = ({
         [styles.colorDarkGrey]: color === 'darkGrey',
         [styles.colorLightGrey]: color === 'lightGrey',
         [styles.colorStandardGrey]: color === 'standardGrey',
+        [styles.colorWhite70]: color === 'white70',
       },
       {
         [styles.hyphensNone]: hyphensNone,

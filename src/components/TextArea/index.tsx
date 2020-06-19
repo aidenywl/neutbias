@@ -24,6 +24,7 @@ interface Props {
   disabled?: boolean;
   label?: string;
   maxLength?: number;
+  minimizeLabel?: boolean;
   onBlur?: () => void;
   onChange?: (event: SyntheticEvent<HTMLTextAreaElement>) => void;
   onCompositionEnd?: (event: CompositionEvent<HTMLTextAreaElement>) => void;
@@ -56,6 +57,7 @@ const TextArea: FunctionComponent<Props> = (props) => {
     disabled = false,
     label,
     maxLength,
+    minimizeLabel = false,
     onBlur,
     onCompositionEnd,
     onCompositionStart,
@@ -105,7 +107,12 @@ const TextArea: FunctionComponent<Props> = (props) => {
   return (
     <div className={containerClassName}>
       <div className={textAreaWrapperClassName}>
-        <TextAreaLabel focused={focused} label={label} value={value} />
+        <TextAreaLabel
+          focused={focused}
+          minimizeLabel={minimizeLabel}
+          label={label}
+          value={value}
+        />
         <textarea
           autoComplete={autoComplete}
           autoFocus={autoFocus}
@@ -132,16 +139,22 @@ export default TextArea;
 
 interface TextAreaLabelProps {
   focused: boolean;
+  minimizeLabel: boolean;
   label?: string;
   value: string;
 }
 
-const TextAreaLabel: FunctionComponent<TextAreaLabelProps> = ({ focused, label, value }) => {
+const TextAreaLabel: FunctionComponent<TextAreaLabelProps> = ({
+  focused,
+  label,
+  minimizeLabel,
+  value,
+}) => {
   if (label == null) {
     return null;
   }
 
-  const shouldMinimizeLabel = focused || !!value;
+  const shouldMinimizeLabel = focused || minimizeLabel || !!value;
   const labelClassName = classNames(
     styles.label,
     shouldMinimizeLabel ? styles.labelMinimized : null,

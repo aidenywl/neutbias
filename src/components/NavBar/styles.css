@@ -4,14 +4,11 @@
   position: fixed;
   top: 0;
   width: 100%;
-}
-
-.title {
-  flex: 3;
+  direction: rtl;
+  padding: $spacing8 $spacing36;
 }
 
 .about {
-  align-items: center;
   display: flex;
   flex: 1;
 }
@@ -19,6 +16,6 @@
 .container a {
   color: rgba(255, 255, 255, 0.7);
   font-size: 18px;
-  padding: 8px;
+  padding: $spacing8 0;
   text-decoration: none;
 }
