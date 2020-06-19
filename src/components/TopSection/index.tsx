@@ -1,16 +1,21 @@
 import React, { FunctionComponent, SyntheticEvent } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../Button';
 import Heading from '../Heading';
 import TextArea from '../TextArea';
 
-import { selectInputValue } from '../../data/translation';
+import { biasTextFormUpdate, selectInputValue } from '../../data/translation';
 
 import styles from './styles.css';
 
 const TopSection: FunctionComponent<{}> = () => {
+  const dispatch = useDispatch();
   const biasedInput = useSelector(selectInputValue);
+
+  const onBiasedInputChange = (e: SyntheticEvent<HTMLTextAreaElement>) => {
+    dispatch(biasTextFormUpdate(e.currentTarget.value));
+  };
 
   const onFormSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     // Call preventDefault() to avoid the jsdom error
@@ -25,8 +30,9 @@ const TopSection: FunctionComponent<{}> = () => {
         <TextArea
           className={styles.textarea}
           label="Enter Text to Neutralize"
-          rows={{ count: 2, type: 'static' }}
-          value={''}
+          onChange={onBiasedInputChange}
+          rows={{ count: 5, type: 'static' }}
+          value={biasedInput}
         />
         <Button type="mainSubmit">{'Neutralize Bias'}</Button>
       </>

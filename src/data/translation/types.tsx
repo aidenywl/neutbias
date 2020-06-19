@@ -2,11 +2,11 @@
  * Actions
  */
 
-export interface TranslationBiasedTextSubmitAction {
+export interface TranslationUpdateBiasedTextAction {
   payload: {
     text: string;
   };
-  type: 'TRANSLATION_SUBMIT_BIASED_TEXT_SUBMIT_ACTION';
+  type: 'TRANSLATION_UPDATE_BIASED_TEXT_ACTION';
 }
 
 export interface TranslationNeutralizedTextSuccessAction {
@@ -16,7 +16,7 @@ export interface TranslationNeutralizedTextSuccessAction {
   type: 'TRANSLATION_NEUTRALIZED_TEXT_SUCCESS_ACTION';
 }
 
-export type Action = TranslationBiasedTextSubmitAction | TranslationNeutralizedTextSuccessAction;
+export type Action = TranslationUpdateBiasedTextAction | TranslationNeutralizedTextSuccessAction;
 /**
  * State
  */
