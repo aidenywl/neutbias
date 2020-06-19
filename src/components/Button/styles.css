@@ -1,0 +1,100 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.loadingIndicator {
+  margin: $spacing8 $spacing8 0;
+  vertical-align: middle;
+}
+
+.mainSubmit,
+.outline {
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.infoButton,
+.mainSubmit,
+.outline {
+  padding: $spacing8 $spacing16;
+  border-radius: $spacing4;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:empty::before {
+  content: '\200b';
+}
+
+.small {
+  font-size: 14px;
+}
+
+.medium {
+  font-size: 16px;
+}
+
+.mainSubmit {
+  color: $darkGrey;
+  background-color: $green85;
+  box-shadow: 0 2px 4px $black25;
+}
+
+.mainSubmitLoading {
+  background-color: $green100;
+}
+
+.infoButton {
+  color: $white;
+  background-color: $blue95;
+  box-shadow: 0 2px 4px $black25;
+}
+
+.icon {
+  padding: $spacing8;
+  background-color: transparent;
+}
+
+.outline {
+  padding: calc($spacing8 - 1px) $spacing16;
+  background-color: white;
+  border: solid 1px $black25;
+}
+
+.outline:active,
+.outline:focus {
+  background-color: $black25;
+  box-shadow: $darkGrey;
+}
+
+.outlineLoading {
+  background-color: $black25;
+}
+
+.outline:disabled {
+  color: $lightGrey;
+  background-color: white;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+.mainSubmit:enabled:hover {
+  background-color: $green65;
+}
+
+.infoButton:enabled:hover {
+  background-color: $blue75;
+}
+
+.outline:enabled:hover {
+  background-color: $black25;
+}

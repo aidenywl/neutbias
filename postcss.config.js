@@ -1,4 +1,5 @@
-const constants = require('./src/constants/constants.ts');
+const constants = require('./src/components/constants.js');
+
 module.exports = () => ({
   plugins: [
     // This is general (without restricting to supportedBrowsers) because of #2068.

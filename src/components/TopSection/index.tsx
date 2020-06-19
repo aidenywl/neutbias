@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
+import Button from '../Button';
 import Heading from '../Heading';
 import TextArea from '../TextArea';
 
@@ -18,6 +19,7 @@ const TopSection: FunctionComponent<{}> = () => {
           rows={{ count: 2, type: 'static' }}
           value={''}
         />
+        <Button type="mainSubmit">{'Neutralize Bias'}</Button>
         <TextArea
           className={styles.textarea}
           disabled={true}
