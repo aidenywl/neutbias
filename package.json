@@ -54,6 +54,8 @@
     "postcss-simple-vars": "^5.0.2",
     "postcss-typescript-css": "^0.2.1",
     "prettier": "^2.0.5",
+    "redux-devtools": "^3.5.0",
+    "redux-logger": "^3.0.6",
     "style-loader": "^1.2.1",
     "ts-jest": "^26.1.0",
     "tslint": "^6.1.2",

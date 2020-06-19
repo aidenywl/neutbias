@@ -1,0 +1,53 @@
+.container {
+  display: inline-flex;
+  flex-flow: row nowrap;
+}
+
+.spinner {
+  z-index: 2;
+  animation: rotate 1.5s linear infinite;
+}
+
+.spinnerSizeS {
+  width: $spacing16;
+  height: $spacing16;
+  margin: -$spacing8 0 0 -$spacing8;
+}
+
+.spinnerSizeM {
+  width: $spacing32;
+  height: $spacing32;
+  margin: -$spacing16 0 0 -$spacing16;
+}
+
+.spinnerSizeL {
+  width: $spacing64;
+  height: $spacing64;
+  margin: -$spacing32 0 0 -$spacing32;
+}
+
+.path {
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}

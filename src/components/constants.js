@@ -19,7 +19,7 @@ module.exports = {
   darkGrey: '#333333',
   green100: 'rgba(102, 198, 136, 1)',
   green85: 'rgba(102, 198, 136, 0.85)',
-  green65: 'rgba(102, 198, 136, 0.80)',
+  green65: 'rgba(102, 198, 136, 0.65)',
   lightGrey: '#828282',
   standardGrey: 'rgba(79, 79, 79, 0.75)',
   white70: 'rgba(255, 255, 255, 0.7)',

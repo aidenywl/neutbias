@@ -87,7 +87,7 @@
   cursor: not-allowed;
 }
 
-.mainSubmit:enabled:hover {
+.mainSubmit:hover {
   background-color: $green65;
 }
 

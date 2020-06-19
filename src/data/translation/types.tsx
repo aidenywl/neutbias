@@ -21,7 +21,7 @@ export type Action = TranslationBiasedTextSubmitAction | TranslationNeutralizedT
  * State
  */
 
-export interface TranslationState {
+export interface State {
   input: string;
   output: string;
 }

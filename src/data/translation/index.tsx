@@ -1,4 +1,4 @@
-import { Action, TranslationState } from './types';
+import { Action, State } from './types';
 
 /**
  * Actions
@@ -8,15 +8,12 @@ import { Action, TranslationState } from './types';
  * Reducers
  */
 
-export const initialState: TranslationState = {
+export const initialState: State = {
   input: '',
   output: '',
 };
 
-export default function reducer(
-  state: TranslationState = initialState,
-  action: Action,
-): TranslationState {
+export default function reducer(state: State = initialState, action: Action): State {
   switch (action.type) {
     case 'TRANSLATION_SUBMIT_BIASED_TEXT_SUBMIT_ACTION':
       return { ...state, input: action.payload.text };
@@ -34,6 +31,9 @@ export default function reducer(
 /**
  * Selectors
  */
+export function selectInputValue(state: State) {
+  return state.input;
+}
 
 /**
  * Utils
