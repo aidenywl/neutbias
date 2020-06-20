@@ -23,5 +23,6 @@ export type Action = TranslationUpdateBiasedTextAction | TranslationNeutralizedT
 
 export interface State {
   input: string;
+  loading: boolean;
   output: string;
 }

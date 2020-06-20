@@ -1,4 +1,5 @@
-import { Action, State } from './types';
+import { State as TranslationState } from './types';
+import { Action, State } from '../types';
 
 import { TranslationUpdateBiasedTextAction } from './types';
 /**
@@ -12,18 +13,23 @@ export function biasTextFormUpdate(text: string): TranslationUpdateBiasedTextAct
     type: 'TRANSLATION_UPDATE_BIASED_TEXT_ACTION',
   };
 }
+
 /**
  * Reducers
  */
 
-export const initialState: State = {
+export const initialState: TranslationState = {
   input: '',
+  loading: false,
   output: '',
 };
 
-export default function reducer(state: State = initialState, action: Action): State {
+export default function reducer(
+  state: TranslationState = initialState,
+  action: Action,
+): TranslationState {
   switch (action.type) {
-    case 'TRANSLATION_SUBMIT_BIASED_TEXT_ACTION':
+    case 'TRANSLATION_UPDATE_BIASED_TEXT_ACTION':
       return { ...state, input: action.payload.text };
     case 'TRANSLATION_NEUTRALIZED_TEXT_SUCCESS_ACTION':
       return { ...state, output: action.payload.text };
@@ -40,7 +46,11 @@ export default function reducer(state: State = initialState, action: Action): St
  * Selectors
  */
 export function selectInputValue(state: State) {
-  return state.input;
+  return state.Translation.input;
+}
+
+export function selectLoading(state: State) {
+  return state.Translation.loading;
 }
 
 /**

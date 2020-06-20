@@ -5,7 +5,11 @@ import Button from '../Button';
 import Heading from '../Heading';
 import TextArea from '../TextArea';
 
-import { biasTextFormUpdate, selectInputValue } from '../../data/translation';
+import {
+  biasTextFormUpdate,
+  selectInputValue,
+  translationSubmitRequest,
+} from '../../data/translation';
 
 import styles from './styles.css';
 
@@ -22,6 +26,7 @@ const TopSection: FunctionComponent<{}> = () => {
     // "Not implemented: HTMLFormElement.prototype.submit"
     // during tests
     e.preventDefault();
+    dispatch(translationSubmitRequest({ biasedInput }));
   };
 
   const renderForm = () => {
