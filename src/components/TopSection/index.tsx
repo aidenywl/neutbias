@@ -5,17 +5,18 @@ import Button from '../Button';
 import Heading from '../Heading';
 import TextArea from '../TextArea';
 
-import {
-  biasTextFormUpdate,
-  selectInputValue,
-  translationSubmitRequest,
-} from '../../data/translation';
+import { biasTextFormUpdate, selectInputValue, selectLoading } from '../../data/translation';
+
+import { sendRequest } from '../../utils/request';
 
 import styles from './styles.css';
+
+const API = 'http://35.236.45.155:5000/translator/translate';
 
 const TopSection: FunctionComponent<{}> = () => {
   const dispatch = useDispatch();
   const biasedInput = useSelector(selectInputValue);
+  const loading = useSelector(selectLoading);
 
   const onBiasedInputChange = (e: SyntheticEvent<HTMLTextAreaElement>) => {
     dispatch(biasTextFormUpdate(e.currentTarget.value));
@@ -26,7 +27,16 @@ const TopSection: FunctionComponent<{}> = () => {
     // "Not implemented: HTMLFormElement.prototype.submit"
     // during tests
     e.preventDefault();
-    dispatch(translationSubmitRequest({ biasedInput }));
+    console.log(biasedInput);
+    sendRequest(API, {
+      data: [
+        {
+          src: 'Schnabel did the fantastic reproductions of Basquiat’s work',
+          id: 100,
+        },
+      ],
+      method: 'POST',
+    });
   };
 
   const renderForm = () => {
@@ -39,7 +49,9 @@ const TopSection: FunctionComponent<{}> = () => {
           rows={{ count: 5, type: 'static' }}
           value={biasedInput}
         />
-        <Button type="mainSubmit">{'Neutralize Bias'}</Button>
+        <Button buttonType="submit" loading={loading} type="mainSubmit">
+          {'Neutralize Bias'}
+        </Button>
       </>
     );
   };

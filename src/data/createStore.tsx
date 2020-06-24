@@ -1,9 +1,8 @@
 import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import { Saga } from 'redux-saga';
-
-import translation from './translation';
+import Translation from './translation';
+import rootSaga from './sagaRegistry';
 
 declare global {
   interface Window {
@@ -12,7 +11,7 @@ declare global {
 }
 
 export default function (initialState?: Object) {
-  const reducer = combineReducers({ translation });
+  const reducer = combineReducers({ Translation });
 
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [sagaMiddleware];
@@ -20,7 +19,7 @@ export default function (initialState?: Object) {
 
   const store = {
     ...createStore(reducer, initialState, composeEnhancers(applyMiddleware(...middlewares))),
-    runSaga: sagaMiddleware.run,
+    runSaga: sagaMiddleware.run(rootSaga),
   };
 
   return store;

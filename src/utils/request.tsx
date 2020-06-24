@@ -1,29 +1,8 @@
 import queryString from 'query-string';
 
-export interface RequestOptions {
-  data?: any;
-  files?: { content: Blob; fieldName: string }[];
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE';
-  headers?: { [name: string]: string };
-  query?: { [name: string]: number | string | Array<string> };
-}
+import { HttpResponse, RequestOptions } from './interface';
 
-export interface HttpResponse<T> {
-  parsedBody?: T;
-  headers: Headers;
-  status: number;
-}
-
-export interface ResponseError {
-  data?: Object;
-  statusCode: number;
-  type: 'ResponseError';
-}
-
-export async function sendRequest<T>(
-  url: string,
-  options: RequestOptions,
-): Promise<HttpResponse<T>> {
+export async function sendRequest(url: string, options: RequestOptions): Promise<HttpResponse> {
   const { data, files, headers } = options;
   let response;
   // If there are files, then it's a multipart/form-data and special encoding is needed.

@@ -1,6 +1,31 @@
+export interface InputSentence {
+  src: string;
+  id: number;
+}
+
+export interface NeutralizedSentence {
+  n_best: number;
+  pred_score: number;
+  src: string;
+  tgt: string;
+}
+
 /**
  * Actions
  */
+
+export interface TranslationSubmitBiasedTextAction {
+  payload: {
+    text: string;
+  };
+  type: 'TRANSLATION_SUBMIT_BIASED_TEXT';
+}
+export interface TranslationNeutralizedTextSuccessAction {
+  payload: {
+    text: string;
+  };
+  type: 'TRANSLATION_NEUTRALIZED_TEXT_SUCCESS_ACTION';
+}
 
 export interface TranslationUpdateBiasedTextAction {
   payload: {
@@ -9,14 +34,23 @@ export interface TranslationUpdateBiasedTextAction {
   type: 'TRANSLATION_UPDATE_BIASED_TEXT_ACTION';
 }
 
-export interface TranslationNeutralizedTextSuccessAction {
+export interface TranslationTextSubmitSuccessAction {
   payload: {
     text: string;
   };
-  type: 'TRANSLATION_NEUTRALIZED_TEXT_SUCCESS_ACTION';
+  type: 'TRANSLATION_TEXT_SUBMIT_SUCCESS_ACTION';
 }
 
-export type Action = TranslationUpdateBiasedTextAction | TranslationNeutralizedTextSuccessAction;
+export interface TranslationTextSubmitFailureAction {
+  type: 'TRANSLATION_TEXT_SUBMIT_FAILURE_ACTION';
+}
+
+export type Action =
+  | TranslationNeutralizedTextSuccessAction
+  | TranslationSubmitBiasedTextAction
+  | TranslationUpdateBiasedTextAction
+  | TranslationTextSubmitFailureAction
+  | TranslationTextSubmitSuccessAction;
 /**
  * State
  */

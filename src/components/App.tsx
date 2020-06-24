@@ -1,3 +1,5 @@
+// Allows es6 syntax with generators for redux-saga.
+import 'regenerator-runtime/runtime';
 import React, { FunctionComponent } from 'react';
 
 import BottomSection from './BottomSection';
