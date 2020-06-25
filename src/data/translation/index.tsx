@@ -19,7 +19,7 @@ const API_URL = 'http://35.236.45.155:5000/translator/translate';
 /**
  * Actions
  */
-export function biasTextFormUpdate(text: string): TranslationUpdateBiasedTextAction {
+export function translationBiasTextFormUpdate(text: string): TranslationUpdateBiasedTextAction {
   return {
     payload: {
       text,
@@ -28,12 +28,20 @@ export function biasTextFormUpdate(text: string): TranslationUpdateBiasedTextAct
   };
 }
 
-export function translationTextSubmitSuccess(text: string): TranslationTextSubmitSuccessAction {
+export function translationSubmitBiasedText(text: string): TranslationSubmitBiasedTextAction {
   return {
     payload: {
       text,
     },
-    type: 'TRANSLATION_TEXT_SUBMIT_SUCCESS_ACTION',
+    type: 'TRANSLATION_SUBMIT_BIASED_TEXT',
+  };
+}
+export function translationTextNeutralizeSuccess(text: string): TranslationTextSubmitSuccessAction {
+  return {
+    payload: {
+      text,
+    },
+    type: 'TRANSLATION_TEXT_NEUTRALIZE_SUCCESS_ACTION',
   };
 }
 
@@ -59,7 +67,8 @@ export default function reducer(
   switch (action.type) {
     case 'TRANSLATION_UPDATE_BIASED_TEXT_ACTION':
       return { ...state, input: action.payload.text };
-    case 'TRANSLATION_NEUTRALIZED_TEXT_SUCCESS_ACTION':
+    case 'TRANSLATION_TEXT_NEUTRALIZE_SUCCESS_ACTION':
+      console.log('THIS IS HAPPENING: ', action);
       return { ...state, output: action.payload.text };
     default:
       return state;
@@ -70,13 +79,18 @@ export default function reducer(
  * Worker Sagas
  */
 function* executeSubmitBiasedText({
-  payload: { text },
+  payload,
 }: TranslationSubmitBiasedTextAction): SagaIterator<void> {
   // Construct the request.
+  let { text } = payload;
+  // Remove ending full stop to cut unnecessary array item.
+  if (text[text.length - 1] === '.') {
+    text = text.slice(0, -1);
+  }
   const sentences = text.split('.');
   const data: InputSentence[] = sentences.map((sentence) => {
     return {
-      src: sentence,
+      src: `${sentence}.`,
       id: MODEL_ID,
     };
   });
@@ -87,12 +101,13 @@ function* executeSubmitBiasedText({
       method: 'POST',
     });
     // Construct the sentence
-    const result = parsedBody.reduce(
+    const result = parsedBody[0].reduce(
       (acc: string, item: NeutralizedSentence) => `${acc} ${item.tgt.trim()}`,
+      '',
     );
-    yield put(translationTextSubmitSuccess(result));
+    yield put(translationTextNeutralizeSuccess(result));
   } catch (e) {
-    yield put({ type: 'TRANSLATION_SUBMIT', message: e.message });
+    yield put({ type: 'TRANSLATION_SUBMIT_ERROR', message: e.message });
   }
 }
 
@@ -114,6 +129,11 @@ export function selectInputValue(state: State) {
 
 export function selectLoading(state: State) {
   return state.Translation.loading;
+}
+
+export function selectOutputValue(state: State) {
+  console.log('the state is: ', state);
+  return state.Translation.output;
 }
 
 /**

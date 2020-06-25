@@ -46,7 +46,6 @@ export async function sendRequest(url: string, options: RequestOptions): Promise
   }
   if (response.ok) {
     const parsedBody = await response.json();
-    console.log('the body is: ', parsedBody);
     const parsedResponse = {
       parsedBody,
       headers: response.headers,

@@ -38,7 +38,7 @@ export interface TranslationTextSubmitSuccessAction {
   payload: {
     text: string;
   };
-  type: 'TRANSLATION_TEXT_SUBMIT_SUCCESS_ACTION';
+  type: 'TRANSLATION_TEXT_NEUTRALIZE_SUCCESS_ACTION';
 }
 
 export interface TranslationTextSubmitFailureAction {
