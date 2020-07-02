@@ -65,11 +65,14 @@ export default function reducer(
   action: Action,
 ): TranslationState {
   switch (action.type) {
+    case 'TRANSLATION_SUBMIT_BIASED_TEXT':
+      return { ...state, loading: true };
+    case 'TRANSLATION_TEXT_SUBMIT_FAILURE_ACTION':
+      return { ...state, loading: false };
+    case 'TRANSLATION_TEXT_NEUTRALIZE_SUCCESS_ACTION':
+      return { ...state, loading: false, output: action.payload.text };
     case 'TRANSLATION_UPDATE_BIASED_TEXT_ACTION':
       return { ...state, input: action.payload.text };
-    case 'TRANSLATION_TEXT_NEUTRALIZE_SUCCESS_ACTION':
-      console.log('THIS IS HAPPENING: ', action);
-      return { ...state, output: action.payload.text };
     default:
       return state;
   }
@@ -107,7 +110,7 @@ function* executeSubmitBiasedText({
     );
     yield put(translationTextNeutralizeSuccess(result));
   } catch (e) {
-    yield put({ type: 'TRANSLATION_SUBMIT_ERROR', message: e.message });
+    yield put({ type: 'TRANSLATION_SUBMIT_FAILURE_ACTION', message: e.message });
   }
 }
 
@@ -123,7 +126,6 @@ export function* watchTranslationSubmitSaga() {
  * Selectors
  */
 export function selectInputValue(state: State) {
-  console.log(state);
   return state.Translation.input;
 }
 
@@ -132,7 +134,6 @@ export function selectLoading(state: State) {
 }
 
 export function selectOutputValue(state: State) {
-  console.log('the state is: ', state);
   return state.Translation.output;
 }
 

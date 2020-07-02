@@ -6,12 +6,12 @@ import styles from './styles.css';
 export interface Props {
   children: string;
   className?: string;
-  color?: 'darkBlue90' | 'darkGrey' | 'lightGrey' | 'standardGrey';
+  color?: 'darkBlue90' | 'darkGrey' | 'grey80' | 'lightBlue' | 'standardGrey' | 'white';
   decoration?: 'none';
   inline?: boolean;
   overflow?: 'normal' | 'breakWord';
   singleline?: boolean;
-  size?: 'l' | 'm' | 's' | 'xs';
+  size?: 'l' | 'm' | 's' | 'xs' | 'xxs';
   textAlign?: 'center' | 'left' | 'right';
   weight?: 'regular' | 'semibold';
 }
@@ -34,8 +34,10 @@ const Text: FunctionComponent<Props> = ({
       {
         [styles.colorDarkBlue90]: color === 'darkBlue90',
         [styles.colorDarkGrey]: color === 'darkGrey',
-        [styles.colorLightGrey]: color === 'lightGrey',
+        [styles.colorLightGrey]: color === 'grey80',
+        [styles.colorLightBlue]: color === 'lightBlue',
         [styles.colorStandardGrey]: color === 'standardGrey',
+        [styles.colorWhite]: color === 'white',
       },
       {
         [styles.decorationNone]: decoration === 'none',
@@ -64,6 +66,7 @@ const Text: FunctionComponent<Props> = ({
       [styles.sizeM]: size === 'm',
       [styles.sizeS]: size === 's',
       [styles.sizeXS]: size === 'xs',
+      [styles.sizeXXS]: size === 'xxs',
     });
   };
 

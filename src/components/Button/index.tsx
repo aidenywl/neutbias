@@ -15,7 +15,7 @@ export interface Props {
   onMouseEnter?: (e: SyntheticEvent<HTMLButtonElement>) => void;
   onMouseLeave?: (e: SyntheticEvent<HTMLButtonElement>) => void;
   size?: 's' | 'm';
-  type?: 'mainSubmit' | 'icon' | 'infoButton' | 'outline';
+  type?: 'mainAction' | 'icon' | 'infoButton' | 'outline';
 }
 const Button: FunctionComponent<Props> = ({
   buttonType = 'button',
@@ -53,20 +53,19 @@ const Button: FunctionComponent<Props> = ({
     {
       [styles.small]: size === 's',
       [styles.medium]: size === 'm',
-      [styles.mainSubmit]: type === 'mainSubmit',
+      [styles.mainAction]: type === 'mainAction',
       [styles.infoButton]: type === 'infoButton',
       [styles.outline]: type === 'outline',
     },
     loading
       ? {
-          [styles.mainSubmitLoading]: type === 'mainSubmit',
+          [styles.mainActionLoading]: type === 'mainAction',
           [styles.outlineLoading]: type === 'outline',
         }
       : null,
     className,
   );
 
-  console.log('the class name is: ', buttonClassName);
   const loadingColor = 'white';
 
   return (

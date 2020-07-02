@@ -13,11 +13,19 @@
 }
 
 .colorLightGrey {
-  color: $lightGrey;
+  color: $grey80;
+}
+
+.colorLightBlue {
+  color: $lightBlue;
 }
 
 .colorStandardGrey {
   color: $standardGrey;
+}
+
+.colorWhite {
+  color: $white;
 }
 
 .decorationNone {
@@ -60,4 +68,29 @@
 
 .weightSemibold {
   font-weight: 600;
+}
+
+.sizeL {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.sizeM {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.sizeS {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.sizeXS {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.sizeXXS {
+  font-size: 10px;
+  line-height: 12px;
 }

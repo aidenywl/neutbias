@@ -43,7 +43,7 @@ const TopSection: FunctionComponent<{}> = () => {
           rows={{ count: 5, type: 'static' }}
           value={biasedInput}
         />
-        <Button buttonType="submit" loading={loading} type="mainSubmit">
+        <Button buttonType="submit" loading={loading} type="mainAction">
           {'Neutralize Bias'}
         </Button>
       </>

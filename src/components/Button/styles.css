@@ -12,17 +12,17 @@
   vertical-align: middle;
 }
 
-.mainSubmit,
+.mainAction,
 .outline {
   font-weight: 600;
   line-height: 1.5;
 }
 
 .infoButton,
-.mainSubmit,
+.mainAction,
 .outline {
   padding: $spacing8 $spacing16;
-  border-radius: $spacing4;
+  border-radius: $spacing16;
 }
 
 .button:focus {
@@ -41,13 +41,13 @@
   font-size: 16px;
 }
 
-.mainSubmit {
+.mainAction {
   color: $darkGrey;
   background-color: $green85;
   box-shadow: 0 2px 4px $black25;
 }
 
-.mainSubmitLoading {
+.mainActionLoading {
   background-color: $green100;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .outline:disabled {
-  color: $lightGrey;
+  color: $grey80;
   background-color: white;
 }
 
@@ -87,7 +87,7 @@
   cursor: not-allowed;
 }
 
-.mainSubmit:hover {
+.mainAction:hover {
   background-color: $green65;
 }
 

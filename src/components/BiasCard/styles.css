@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: $darkBlue90;
+  border-radius: $spacing8;
+  padding: $spacing12;
+  margin: $spacing12 0;
+}

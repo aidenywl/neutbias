@@ -1,10 +1,11 @@
-interface BiasInfo {
+export interface BiasInfo {
   readonly name: string;
   readonly description: string;
   readonly biased: string;
   readonly unbiased: string;
 }
-const BIASES: BiasInfo[] = [
+
+export const BIASES: BiasInfo[] = [
   {
     name: 'Demographic Bias',
     description:
