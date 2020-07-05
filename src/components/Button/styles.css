@@ -1,6 +1,7 @@
 .button {
   display: flex;
   align-items: center;
+  max-width: 240px;
   justify-content: center;
   border: none;
   cursor: pointer;

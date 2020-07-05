@@ -5,4 +5,5 @@
   border-radius: $spacing8;
   padding: $spacing12;
   margin: $spacing12 0;
+  max-width: 380px;
 }

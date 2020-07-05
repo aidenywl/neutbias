@@ -4,8 +4,39 @@
   flex-flow: column nowrap;
   justify-content: space-around;
   width: 100vw;
+  min-height: 100vh;
   padding: $spacing36;
   padding-top: $spacing48;
+}
+
+.biasCards {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    min-width: 800px;
+    padding-right: 180px;
+    padding-left: 180px;
+  }
+
+  .biasCards {
+    flex-flow: row nowrap;
+  }
+
+  .biasCards > div {
+    margin: 0 $spacing12;
+  }
+
+  .biasCards:first-child {
+    margin-left: 0 !important;
+  }
+
+  .biasCards:last-child {
+    margin-right: 0 !important;
+  }
 }
 
 .links {

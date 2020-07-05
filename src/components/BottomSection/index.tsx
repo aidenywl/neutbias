@@ -50,7 +50,7 @@ const BottomSection: FunctionComponent<{}> = () => {
   return (
     <div className={styles.container}>
       <Heading level="2">Types of Biases Corrected:</Heading>
-      {renderContent()}
+      <div className={styles.biasCards}>{renderContent()}</div>
       {renderAbout()}
       {renderLinks()}
       <div>
