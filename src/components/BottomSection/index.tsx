@@ -35,10 +35,18 @@ const BottomSection: FunctionComponent<{}> = () => {
     );
   };
 
+  const onPosterButtonClick = () => {
+    window.open('https://stanford-cs221.github.io/autumn2019-extra/posters/144.pdf', '_blank');
+  };
+
+  const onDraftPaperClick = () => {
+    window.open();
+  };
+
   const renderLinks = () => {
     return (
       <div className={styles.links}>
-        <Button className={styles.button} type="mainAction">
+        <Button className={styles.button} onClick={onPosterButtonClick} type="mainAction">
           Project Poster
         </Button>
         <Button className={styles.button} type="mainAction">
@@ -48,7 +56,7 @@ const BottomSection: FunctionComponent<{}> = () => {
     );
   };
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="#about">
       <Heading level="2">Types of Biases Corrected:</Heading>
       <div className={styles.biasCards}>{renderContent()}</div>
       {renderAbout()}

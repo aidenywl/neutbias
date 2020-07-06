@@ -12,12 +12,10 @@
   box-sizing: border-box;
 }
 
-html {
-  overflow: hidden;
-}
-
 .background {
-  height: 100vh;
+  position: relative;
+  min-height: 100%;
   width: 100vw;
-  overflow: auto;
+  overflow: scroll;
+  display: block;
 }

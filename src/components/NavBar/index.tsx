@@ -1,19 +1,20 @@
 import React, { FunctionComponent } from 'react';
+import { Link } from 'react-router-dom';
 
 import Heading from '../Heading';
 
 import styles from './styles.css';
 
-const NavBar: FunctionComponent<{}> = () => {
+const Navbar: FunctionComponent<{}> = () => {
   return (
     <nav className={styles.container}>
       <div className={styles.about}>
-        <a href="#">
+        <Link to="/#about">
           <Heading level="2">ABOUT</Heading>
-        </a>
+        </Link>
       </div>
     </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;
