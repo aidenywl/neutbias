@@ -6,6 +6,7 @@
   width: 100%;
   direction: rtl;
   padding: $spacing8 $spacing36;
+  padding-right: 280px;
 }
 
 .about {

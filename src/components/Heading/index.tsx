@@ -8,7 +8,6 @@ export interface Props {
   className?: string;
   color?: 'darkBlue90' | 'darkGrey' | 'grey80' | 'standardGrey' | 'white70';
   hyphensNone?: boolean;
-  id?: string;
   inline?: boolean;
   level?: '1' | '2' | '3';
   overflow?: 'normal' | 'breakWord';
@@ -23,7 +22,6 @@ const Heading: FunctionComponent<Props> = ({
   className = '',
   color = 'darkBlue90',
   hyphensNone = false,
-  id,
   inline = false,
   level = '1',
   overflow = 'normal',
@@ -72,23 +70,11 @@ const Heading: FunctionComponent<Props> = ({
   } else {
     switch (level) {
       case '1':
-        return (
-          <h1 className={headingClassName} id={id}>
-            {children}
-          </h1>
-        );
+        return <h1 className={headingClassName}>{children}</h1>;
       case '2':
-        return (
-          <h2 className={headingClassName} id={id}>
-            {children}
-          </h2>
-        );
+        return <h2 className={headingClassName}>{children}</h2>;
       case '3':
-        return (
-          <h3 className={headingClassName} id={id}>
-            {children}
-          </h3>
-        );
+        return <h3 className={headingClassName}>{children}</h3>;
       default:
         throw new Error("Heading: Invalid value for 'level'");
     }

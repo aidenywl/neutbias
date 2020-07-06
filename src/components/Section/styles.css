@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  width: 100vw;
+  min-height: 100vh;
+  padding: $spacing36;
+  padding-top: $spacing48;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    min-width: 800px;
+    padding-right: 280px;
+    padding-left: 280px;
+  }
+}

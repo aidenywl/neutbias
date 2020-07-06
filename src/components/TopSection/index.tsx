@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../Button';
 import Heading from '../Heading';
+import Section from '../Section';
 import TextArea from '../TextArea';
 
 import {
@@ -51,7 +52,7 @@ const TopSection: FunctionComponent<{}> = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <Section className={styles.container}>
       <Heading className={styles.heading} color="white70" textAlign="center" level="3">
         Neutralize English Linguistic Bias with a Bidirectional LSTM NLP model.
       </Heading>
@@ -67,7 +68,7 @@ const TopSection: FunctionComponent<{}> = () => {
           value={debiasedOutput}
         />
       </div>
-    </div>
+    </Section>
   );
 };
 

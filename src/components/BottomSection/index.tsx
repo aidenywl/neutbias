@@ -3,6 +3,7 @@ import React, { FunctionComponent } from 'react';
 import BiasCard from '../BiasCard';
 import Button from '../Button';
 import Heading from '../Heading';
+import Section from '../Section';
 import Text from '../Text';
 
 import { BIASES } from '../../constants/bias';
@@ -56,7 +57,7 @@ const BottomSection: FunctionComponent<{}> = () => {
     );
   };
   return (
-    <div className={styles.container} id="#about">
+    <Section className={styles.container} id="#about">
       <Heading level="2">Types of Biases Corrected:</Heading>
       <div className={styles.biasCards}>{renderContent()}</div>
       {renderAbout()}
@@ -67,7 +68,7 @@ const BottomSection: FunctionComponent<{}> = () => {
           accuracy
         </Text>
       </div>
-    </div>
+    </Section>
   );
 };
 
