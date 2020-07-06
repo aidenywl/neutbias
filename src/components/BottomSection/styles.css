@@ -6,22 +6,24 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
+  align-items: center;
 }
 
 @media only screen and (min-width: 1024px) {
   .biasCards {
     flex-flow: row nowrap;
+    align-items: stretch;
   }
 
   .biasCards > div {
     margin: 0 $spacing12;
   }
 
-  .biasCards:first-child {
+  .biasCards > div:first-child {
     margin-left: 0 !important;
   }
 
-  .biasCards:last-child {
+  .biasCards > div:last-child {
     margin-right: 0 !important;
   }
 }

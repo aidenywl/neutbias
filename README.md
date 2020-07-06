@@ -1,8 +1,8 @@
-# Typescript Webpack React Boilerplate
+# Demo for neutralizing bias with NLP
 
-A Typescript boilerplate repository with Typescript, Webpack, CSS Modules, and React Testing library set up to jump right into Typescript React development. Linting with `tslint` and `prettier` has also been set up.
+This website demos the NLP model created from my artificial intelligence project class.
 
-I created this to serve as a boilerplate for frontend projects that come to mind in the future. Feel free to use it for any of your own projects!
+The model is trained on Stanford's Wikipedia Neutrality Corpus.
 
 ## Getting Started
 
@@ -26,6 +26,11 @@ I created this to serve as a boilerplate for frontend projects that come to mind
 1. Pull the repository
 2. Run `yarn` to install all packages.
 3. Run `yarn start` and go to your browser to see the starting website.
+
+### Deploying To Github Pages
+
+1. There are deployment scripts in `package.json`.
+2. Simply run `yarn deploy` to deploy to github pages with `gh-pages`.
 
 ## What's included in the boilerplate?
 

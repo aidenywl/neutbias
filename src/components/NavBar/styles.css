@@ -6,7 +6,12 @@
   width: 100%;
   direction: rtl;
   padding: $spacing8 $spacing36;
-  padding-right: 280px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    padding-right: 14%;
+  }
 }
 
 .about {

@@ -41,7 +41,10 @@ const BottomSection: FunctionComponent<{}> = () => {
   };
 
   const onDraftPaperClick = () => {
-    window.open();
+    window.open(
+      'https://drive.google.com/file/d/1TIZ1D4o9bT9QvZruH6c2uwWod0V0mLJM/view?usp=sharing',
+      '_blank',
+    );
   };
 
   const renderLinks = () => {
@@ -50,7 +53,7 @@ const BottomSection: FunctionComponent<{}> = () => {
         <Button className={styles.button} onClick={onPosterButtonClick} type="mainAction">
           Project Poster
         </Button>
-        <Button className={styles.button} type="mainAction">
+        <Button className={styles.button} onClick={onDraftPaperClick} type="mainAction">
           Draft Paper
         </Button>
       </div>
