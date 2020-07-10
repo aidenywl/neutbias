@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, { FunctionComponent, SyntheticEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -26,6 +27,10 @@ const TopSection: FunctionComponent<{}> = () => {
     dispatch(translationBiasTextFormUpdate(e.currentTarget.value));
   };
 
+  const onAboutClick = () => {
+    document.getElementById('#about')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const onFormSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     // Call preventDefault() to avoid the jsdom error
     // "Not implemented: HTMLFormElement.prototype.submit"
@@ -44,23 +49,34 @@ const TopSection: FunctionComponent<{}> = () => {
           rows={{ count: 5, type: 'static' }}
           value={biasedInput}
         />
-        <Button buttonType="submit" loading={loading} type="mainAction">
+        <Button
+          buttonType="submit"
+          className={styles.textareaSubmit}
+          loading={loading}
+          type="mainAction"
+        >
           {'Neutralize Bias'}
         </Button>
       </>
     );
   };
 
+  const textAreaResultClassNames = classNames(styles.textarea, styles.textAreaResultInitial, {
+    [styles.textAreaResultDisplay]: debiasedOutput !== '',
+  });
+
   return (
     <Section className={styles.container}>
       <Heading className={styles.heading} color="white70" textAlign="center" level="3">
-        Neutralize English Linguistic Bias with a Bidirectional LSTM NLP model.
+        Neutralize Single-Word English Linguistic Bias with a Bidirectional LSTM NLP model.
+        <br />
+        {'This model is trained to neutralize '}
+        <u onClick={onAboutClick}>three types of biases.</u>
       </Heading>
       <div className={styles.content}>
         <form onSubmit={onFormSubmit}>{renderForm()}</form>
-
         <TextArea
-          className={styles.textarea}
+          className={textAreaResultClassNames}
           disabled={true}
           label="Neutralized Text"
           minimizeLabel={true}

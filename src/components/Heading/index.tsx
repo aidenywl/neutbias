@@ -1,10 +1,10 @@
 import classNames from 'classnames';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 
 import styles from './styles.css';
 
 export interface Props {
-  children: string;
+  children: ReactNode;
   className?: string;
   color?: 'darkBlue90' | 'darkGrey' | 'grey80' | 'standardGrey' | 'white70';
   hyphensNone?: boolean;

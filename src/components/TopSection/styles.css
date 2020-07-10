@@ -2,9 +2,21 @@
   background-image: linear-gradient(180deg, #2194b0 0%, rgba(33, 148, 176, 0.45) 100%);
 }
 
+@media only screen and (min-width: 1024px) {
+  .content {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
 .heading {
   flex: 1;
   margin-top: $spacing32;
+}
+
+.headingLink {
+  color: inherit;
+  text-decoration: none;
 }
 
 .content {
@@ -16,4 +28,19 @@
 
 .textarea {
   margin: $spacing32 0;
+}
+
+.textareaSubmit {
+  margin-left: auto;
+}
+
+.textAreaResultInitial {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.textAreaResultDisplay {
+  visibility: visible;
+  opacity: 1;
 }
