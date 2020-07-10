@@ -26,12 +26,28 @@ const BottomSection: FunctionComponent<{}> = () => {
   };
   const renderAbout = () => {
     return (
-      <div>
+      <div className={styles.about}>
         <Heading level="2">About The Project</Heading>
-        <Text>
+        <Text color="darkGrey">
+          This model is part of a project to compare the differences when using byte pair encoding
+          tokenizers versus OpenNMT's default whitespace and punctuation tokenizer.
+          <br />
+          <br />
           OpenNMT-py is used to create a non-linear model with an Adam optimizer with an additive
-          attention mechanism (Bahdanau et al.)
+          attention mechanism. The model used here is trained using the:
         </Text>
+        <br />
+        <ul>
+          <li>
+            <Text color="darkGrey">standard OpenNMT whitespace and punctuation tokenizer</Text>
+          </li>
+          <li>
+            <Text color="darkGrey">a vocabulary size of 32000</Text>
+          </li>
+          <li>
+            <Text color="darkGrey">bi-directional 2-layer LSTM</Text>
+          </li>
+        </ul>
       </div>
     );
   };

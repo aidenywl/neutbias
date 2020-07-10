@@ -11,7 +11,7 @@
 @media only screen and (min-width: 1024px) {
   .container {
     min-width: 800px;
-    padding-right: 16%;
-    padding-left: 16%;
+    padding-right: 12%;
+    padding-left: 12%;
   }
 }

@@ -28,11 +28,23 @@
   }
 }
 
+.about {
+  margin: $spacing48 0;
+}
+
 .links {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
   flex-basis: 100%;
+}
+
+.links > button:first-child {
+  margin-left: auto;
+}
+
+.links > button:last-child {
+  margin-right: auto;
 }
 
 .button {

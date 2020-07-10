@@ -23,23 +23,24 @@ const BiasCard: FunctionComponent<Props> = ({
   const containerClassName = classNames(styles.container, className);
   return (
     <div className={containerClassName}>
-      <Text className={styles.title} color="lightBlue" size="m">
+      <Text className={styles.title} color="lightBlue" size="l">
         {title}
       </Text>
-      <Text className={styles.description} color="white" size="s">
+      <Text className={styles.description} color="white" size="m">
         {description}
       </Text>
       <div className={styles.versusSegment}>
+        <br />
         <Text
           className={styles.versusText}
           color="grey80"
-          size="xs"
+          size="s"
           textAlign="center"
         >{`"${versusTextOne}"`}</Text>
-        <Text color="grey80" size="xs" textAlign="center">
+        <Text color="white" size="s" textAlign="center">
           vs
         </Text>
-        <Text color="grey80" size="xs" textAlign="center">{`"${versusTextTwo}"`}</Text>
+        <Text color="grey80" size="s" textAlign="center">{`"${versusTextTwo}"`}</Text>
       </div>
     </div>
   );

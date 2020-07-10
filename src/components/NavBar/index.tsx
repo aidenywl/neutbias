@@ -10,10 +10,8 @@ const Navbar: FunctionComponent<{}> = () => {
   };
   return (
     <nav className={styles.container}>
-      <div className={styles.about}>
-        <div onClick={onAboutClick}>
-          <Heading level="2">ABOUT</Heading>
-        </div>
+      <div className={styles.about} onClick={onAboutClick}>
+        <Heading level="2">ABOUT</Heading>
       </div>
     </nav>
   );

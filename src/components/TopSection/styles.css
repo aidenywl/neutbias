@@ -16,7 +16,7 @@
 
 .headingLink {
   color: inherit;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 .content {

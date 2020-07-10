@@ -71,7 +71,9 @@ const TopSection: FunctionComponent<{}> = () => {
         Neutralize Single-Word English Linguistic Bias with a Bidirectional LSTM NLP model.
         <br />
         {'This model is trained to neutralize '}
-        <u onClick={onAboutClick}>three types of biases.</u>
+        <u className={styles.headingLink} onClick={onAboutClick}>
+          three types of biases.
+        </u>
       </Heading>
       <div className={styles.content}>
         <form onSubmit={onFormSubmit}>{renderForm()}</form>

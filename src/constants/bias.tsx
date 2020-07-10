@@ -10,20 +10,20 @@ export const BIASES: BiasInfo[] = [
     name: 'Demographic Bias',
     description:
       'Text with presuppositions about particular genders, races, or other demographic categories.',
-    biased: 'books are to mankind what memory is to the individual',
+    biased: 'books are to [mankind] what memory is to the individual',
     unbiased: 'books are to humankind what memory is to the individual',
   },
   {
     name: 'Framing Bias',
-    description: 'Using Subjective Words or phrases linked with a particular point of view',
-    biased: 'books are to mankind what memory is to the individual',
-    unbiased: 'books are to humankind what memory is to the individual',
+    description: 'Linguistic features that subtly modify the believability of a proposition',
+    biased: 'he [realized] that all claims by the news source are biased',
+    unbiased: 'he says that all claims by the news source are biased',
   },
   {
     name: 'Demographic Bias',
     description:
       'Text with presuppositions about particular genders, races, or other demographic categories.',
-    biased: 'books are to mankind what memory is to the individual',
-    unbiased: 'books are to humankind what memory is to the individual',
+    biased: "Schnabel did the fantastic reproductions of Basquiat's work",
+    unbiased: "Schnabel did the reproductions of Basquiat's work",
   },
 ];
