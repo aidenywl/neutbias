@@ -86,11 +86,11 @@ function* executeSubmitBiasedText({
 }: TranslationSubmitBiasedTextAction): SagaIterator<void> {
   // Construct the request.
   let { text } = payload;
-  // Remove ending full stop to cut unnecessary array item.
-  if (text[text.length - 1] === '.') {
-    text = text.slice(0, -1);
-  }
   const sentences = text.split('.');
+  // Remove ending full stop to cut unnecessary array item.
+  if (sentences[sentences.length - 1] === '') {
+    sentences.splice(-1, 1);
+  }
   const data: InputSentence[] = sentences.map((sentence) => {
     return {
       src: `${sentence}.`,

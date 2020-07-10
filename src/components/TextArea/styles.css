@@ -14,7 +14,7 @@
 
 .textAreaWrapper:focus-within {
   border: 1px solid $darkBlue90;
-  box-shadow: 0 0 0 $spacing4 $darkBlue20;
+  box-shadow: 0 0 0 $spacing4 $darkGreen80;
 }
 
 .textArea {

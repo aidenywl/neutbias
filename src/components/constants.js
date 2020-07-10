@@ -17,9 +17,11 @@ module.exports = {
   darkBlue90: 'rgba(50, 75, 81, 0.9)',
   darkBlue20: 'rgba(50, 75, 81, 0.2)',
   darkGrey: '#333333',
+  darkGreen80: 'rgba(0, 155, 122, 0.8)',
   green100: 'rgba(102, 198, 136, 1)',
   green85: 'rgba(102, 198, 136, 0.85)',
   green65: 'rgba(102, 198, 136, 0.65)',
+
   lightBlue: '#7EBDCD',
   grey80: '#C4C4C4',
   grey40: '#4F4F4F',
