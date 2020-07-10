@@ -1,16 +1,14 @@
 import classNames from 'classnames';
 import React, {
   CompositionEvent,
-  forwardRef,
   FocusEvent,
   FunctionComponent,
   KeyboardEvent,
   SyntheticEvent,
-  useRef,
   useLayoutEffect,
+  useRef,
   useState,
 } from 'react';
-import { useDispatch } from 'react-redux';
 
 import Text from '../Text';
 
@@ -48,6 +46,9 @@ interface Props {
   value: string;
 }
 
+const BORDER_WIDTH = 1;
+const LINE_HEIGHT = 24;
+
 const TextArea: FunctionComponent<Props> = (props) => {
   const {
     autoComplete = 'off',
@@ -73,7 +74,34 @@ const TextArea: FunctionComponent<Props> = (props) => {
   } = props;
   const [focused, setFocused] = useState(false);
 
-  const onTextAreaBlur = (e: FocusEvent<HTMLTextAreaElement>) => {
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
+  useLayoutEffect(() => {
+    if (rows.type !== 'dynamic' || textAreaRef.current === null) {
+      return;
+    }
+    const maxHeight = rows.maxCount * LINE_HEIGHT;
+    textAreaRef.current.style.maxHeight = `${maxHeight}px`;
+  }, []);
+
+  useLayoutEffect(() => {
+    function updateTextAreaHeigt() {
+      if (textAreaRef.current === null) {
+        return;
+      }
+      textAreaRef.current.style.height = 'auto';
+
+      const height = calculateNodeHeight(textAreaRef.current.scrollHeight);
+
+      textAreaRef.current.style.height = `${height}px`;
+    }
+
+    if (rows.type === 'dynamic') {
+      updateTextAreaHeigt();
+    }
+  }, [rows, value]);
+
+  const onTextAreaBlur = () => {
     if (onBlur) {
       onBlur();
     }
@@ -127,6 +155,7 @@ const TextArea: FunctionComponent<Props> = (props) => {
           onFocus={onTextAreaFocus}
           onKeyDown={onKeyDown}
           placeholder={placeholder}
+          ref={textAreaRef}
           required={required}
           rows={rows.type === 'static' ? rows.count : rows.minCount}
           value={value}
@@ -172,3 +201,12 @@ const TextAreaLabel: FunctionComponent<TextAreaLabelProps> = ({
     </Text>
   );
 };
+
+function calculateNodeHeight(scrollHeight: number): number {
+  // Values are hardcoded instead of using window.getComputedStyle
+  // for performance savings.
+
+  const height = scrollHeight + BORDER_WIDTH * 2;
+
+  return height;
+}

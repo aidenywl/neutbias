@@ -46,7 +46,7 @@ const TopSection: FunctionComponent<{}> = () => {
           className={styles.textarea}
           label="Enter Text to Neutralize"
           onChange={onBiasedInputChange}
-          rows={{ count: 5, type: 'static' }}
+          rows={{ minCount: 3, maxCount: 6, type: 'dynamic' }}
           value={biasedInput}
         />
         <Button
@@ -82,7 +82,7 @@ const TopSection: FunctionComponent<{}> = () => {
           disabled={true}
           label="Neutralized Text"
           minimizeLabel={true}
-          rows={{ minCount: 1, maxCount: 5, type: 'dynamic' }}
+          rows={{ minCount: 1, maxCount: 6, type: 'dynamic' }}
           value={debiasedOutput}
         />
       </div>
