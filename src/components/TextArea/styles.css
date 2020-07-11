@@ -34,6 +34,7 @@
 }
 
 .textArea:disabled {
+  color: $darkBlue90;
   cursor: not-allowed;
 }
 

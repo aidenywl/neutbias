@@ -71,7 +71,7 @@ const TopSection: FunctionComponent<{}> = () => {
 
   return (
     <Section className={styles.container}>
-      <Heading className={styles.heading} color="white70" textAlign="center" level="3">
+      <Heading className={styles.heading} hyphensNone color="white70" textAlign="center" level="3">
         Neutralize Single-Word English Linguistic Bias with a Bidirectional LSTM NLP model.
         <br />
         {'This model is trained to neutralize '}
