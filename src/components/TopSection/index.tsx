@@ -48,7 +48,7 @@ const TopSection: FunctionComponent<{}> = () => {
           className={styles.textarea}
           error={error}
           label="Enter Text to Neutralize"
-          maxLength={500}
+          maxLength={1000}
           onChange={onBiasedInputChange}
           rows={{ minCount: 3, maxCount: 6, type: 'dynamic' }}
           value={biasedInput}
