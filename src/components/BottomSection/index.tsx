@@ -28,7 +28,7 @@ const BottomSection: FunctionComponent<{}> = () => {
     return (
       <div className={styles.about}>
         <Heading level="2">About The Project</Heading>
-        <Text color="darkGrey">
+        <Text color="darkGrey" hyphensNone>
           This model is part of a project to compare the differences when using byte pair encoding
           tokenizers versus OpenNMT's default whitespace and punctuation tokenizer.
           <br />
@@ -39,13 +39,19 @@ const BottomSection: FunctionComponent<{}> = () => {
         <br />
         <ul>
           <li>
-            <Text color="darkGrey">standard OpenNMT whitespace and punctuation tokenizer</Text>
+            <Text color="darkGrey" hyphensNone>
+              standard OpenNMT whitespace and punctuation tokenizer
+            </Text>
           </li>
           <li>
-            <Text color="darkGrey">a vocabulary size of 32000</Text>
+            <Text color="darkGrey" hyphensNone>
+              a vocabulary size of 32000
+            </Text>
           </li>
           <li>
-            <Text color="darkGrey">bi-directional 2-layer LSTM</Text>
+            <Text color="darkGrey" hyphensNone>
+              bi-directional 2-layer LSTM
+            </Text>
           </li>
         </ul>
       </div>
@@ -82,8 +88,8 @@ const BottomSection: FunctionComponent<{}> = () => {
       {renderAbout()}
       {renderLinks()}
       <div>
-        <Text size="xxs" inline={true}>
-          Model accuracy is written incorrectly in the poster.Refer to the paper for the correct
+        <Text size="xxs" inline>
+          Model accuracy is written incorrectly in the poster. Refer to the paper for the correct
           accuracy
         </Text>
       </div>

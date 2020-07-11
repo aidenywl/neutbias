@@ -83,9 +83,9 @@ const TopSection: FunctionComponent<{}> = () => {
         <form onSubmit={onFormSubmit}>{renderForm()}</form>
         <TextArea
           className={textAreaResultClassNames}
-          disabled={true}
+          disabled
           label="Neutralized Text"
-          minimizeLabel={true}
+          minimizeLabel
           rows={{ minCount: 1, maxCount: 6, type: 'dynamic' }}
           value={debiasedOutput}
         />

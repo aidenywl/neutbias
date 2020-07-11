@@ -8,6 +8,7 @@ export interface Props {
   className?: string;
   color?: 'darkBlue90' | 'darkGrey' | 'grey80' | 'lightBlue' | 'red90' | 'standardGrey' | 'white';
   decoration?: 'none';
+  hyphensNone?: boolean;
   inline?: boolean;
   overflow?: 'normal' | 'breakWord';
   singleline?: boolean;
@@ -21,6 +22,7 @@ const Text: FunctionComponent<Props> = ({
   className,
   color,
   decoration,
+  hyphensNone,
   inline,
   overflow,
   singleline,
@@ -42,6 +44,9 @@ const Text: FunctionComponent<Props> = ({
       },
       {
         [styles.decorationNone]: decoration === 'none',
+      },
+      {
+        [styles.hyphensNone]: hyphensNone,
       },
       {
         [styles.overflowNormal]: overflow === 'normal',

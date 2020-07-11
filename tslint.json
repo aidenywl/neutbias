@@ -69,6 +69,7 @@
     "comment-format": [true, "check-space"],
     "interface-name": [false],
     "jsdoc-format": true,
+    "jsx-boolean-value": false,
     "no-parameter-properties": false,
     "variable-name": [false, "check-format", "allow-leading-underscore", "ban-keywords"]
   },

@@ -174,7 +174,7 @@ const TextArea: FunctionComponent<Props> = (props) => {
       </div>
       <div className={styles.details}>
         {error && (
-          <Text color="red90" className={errorClassName} inline={true} singleline={true} size="s">
+          <Text color="red90" className={errorClassName} inline singleline size="s">
             {error}
           </Text>
         )}
@@ -182,8 +182,8 @@ const TextArea: FunctionComponent<Props> = (props) => {
           <Text
             className={styles.maxLength}
             color="darkBlue90"
-            inline={true}
-            singleline={true}
+            inline
+            singleline
             size="s"
             textAlign="right"
           >
@@ -221,12 +221,7 @@ const TextAreaLabel: FunctionComponent<TextAreaLabelProps> = ({
   );
 
   return (
-    <Text
-      className={labelClassName}
-      inline={true}
-      singleline={true}
-      size={shouldMinimizeLabel ? 'm' : 'l'}
-    >
+    <Text className={labelClassName} inline singleline size={shouldMinimizeLabel ? 'm' : 'l'}>
       {label}
     </Text>
   );
