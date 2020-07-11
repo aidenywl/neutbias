@@ -13,6 +13,7 @@ import {
   selectInputValue,
   selectLoading,
   selectOutputValue,
+  selectErrorValue,
 } from '../../data/translation';
 
 import styles from './styles.css';
@@ -22,6 +23,7 @@ const TopSection: FunctionComponent<{}> = () => {
   const biasedInput = useSelector(selectInputValue);
   const loading = useSelector(selectLoading);
   const debiasedOutput = useSelector(selectOutputValue);
+  const error = useSelector(selectErrorValue);
 
   const onBiasedInputChange = (e: SyntheticEvent<HTMLTextAreaElement>) => {
     dispatch(translationBiasTextFormUpdate(e.currentTarget.value));
@@ -44,8 +46,9 @@ const TopSection: FunctionComponent<{}> = () => {
       <>
         <TextArea
           className={styles.textarea}
+          error={error}
           label="Enter Text to Neutralize"
-          maxLength={1000}
+          maxLength={500}
           onChange={onBiasedInputChange}
           rows={{ minCount: 3, maxCount: 6, type: 'dynamic' }}
           value={biasedInput}

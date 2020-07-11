@@ -42,6 +42,9 @@ export interface TranslationTextSubmitSuccessAction {
 }
 
 export interface TranslationTextSubmitFailureAction {
+  payload: {
+    message: string;
+  };
   type: 'TRANSLATION_TEXT_SUBMIT_FAILURE_ACTION';
 }
 
@@ -56,6 +59,7 @@ export type Action =
  */
 
 export interface State {
+  error?: string;
   input: string;
   loading: boolean;
   output: string;

@@ -7,8 +7,10 @@ module.exports = {
   spacing24: '24px',
   spacing32: '32px',
   spacing36: '36px',
+  spacing40: '40px',
   spacing48: '48px',
   spacing64: '64px',
+  spacing80: '80px',
 
   /** Colors */
   black25: 'rgba(0, 0, 0, 0.25)',
@@ -21,6 +23,8 @@ module.exports = {
   green100: 'rgba(102, 198, 136, 1)',
   green85: 'rgba(102, 198, 136, 0.85)',
   green65: 'rgba(102, 198, 136, 0.65)',
+  red90: 'rgba(130, 41, 0, 0.9)',
+  red50: 'rgba(130, 41, 0, 0.5)',
 
   lightBlue: '#7EBDCD',
   grey80: '#C4C4C4',

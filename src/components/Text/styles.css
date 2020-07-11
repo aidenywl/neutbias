@@ -20,6 +20,10 @@
   color: $lightBlue;
 }
 
+.colorRed90 {
+  color: $red90;
+}
+
 .colorStandardGrey {
   color: $standardGrey;
 }

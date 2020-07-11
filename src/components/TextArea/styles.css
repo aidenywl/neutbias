@@ -12,6 +12,10 @@
   border-radius: $spacing4;
 }
 
+.textAreaWrapperError {
+  border-color: $red90 !important;
+}
+
 .textAreaWrapper:focus-within {
   border: 1px solid $darkBlue90;
   box-shadow: 0 0 0 $spacing4 $darkGreen80;
@@ -66,5 +70,26 @@ textArea:disabled {
 }
 
 .labelMinimized {
-  transform: translateY(-$spacing36);
+  transform: translateY(-$spacing40);
+}
+
+.details {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+.errorText {
+  width: 100%;
+  padding: $spacing4 $spacing4 $spacing4 0;
+}
+
+.errorTextWithMaxLength {
+  width: calc(100% - $spacing80);
+}
+
+.maxLength {
+  flex: 0 0 $spacing80;
+  padding: $spacing4 0;
 }

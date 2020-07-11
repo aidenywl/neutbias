@@ -45,8 +45,11 @@ export function translationTextNeutralizeSuccess(text: string): TranslationTextS
   };
 }
 
-export function translationTextSubmitFailure(): TranslationTextSubmitFailureAction {
+export function translationTextSubmitFailure(message: string): TranslationTextSubmitFailureAction {
   return {
+    payload: {
+      message,
+    },
     type: 'TRANSLATION_TEXT_SUBMIT_FAILURE_ACTION',
   };
 }
@@ -55,6 +58,7 @@ export function translationTextSubmitFailure(): TranslationTextSubmitFailureActi
  */
 
 export const initialState: TranslationState = {
+  error: undefined,
   input: '',
   loading: false,
   output: '',
@@ -66,13 +70,13 @@ export default function reducer(
 ): TranslationState {
   switch (action.type) {
     case 'TRANSLATION_SUBMIT_BIASED_TEXT':
-      return { ...state, loading: true };
+      return { ...state, error: undefined, loading: true };
     case 'TRANSLATION_TEXT_SUBMIT_FAILURE_ACTION':
-      return { ...state, loading: false };
+      return { ...state, error: action.payload.message, loading: false };
     case 'TRANSLATION_TEXT_NEUTRALIZE_SUCCESS_ACTION':
       return { ...state, loading: false, output: action.payload.text };
     case 'TRANSLATION_UPDATE_BIASED_TEXT_ACTION':
-      return { ...state, input: action.payload.text };
+      return { ...state, error: undefined, input: action.payload.text };
     default:
       return state;
   }
@@ -86,14 +90,17 @@ function* executeSubmitBiasedText({
 }: TranslationSubmitBiasedTextAction): SagaIterator<void> {
   // Construct the request.
   let { text } = payload;
-  const sentences = text.split('.');
-  // Remove ending full stop to cut unnecessary array item.
-  if (sentences[sentences.length - 1] === '') {
-    sentences.splice(-1, 1);
+
+  // Split into sentences.
+  let sentences = text.match(/([^\.!\?]+[\.!\?]+)|([^\.!\?]+$)/g);
+
+  if (sentences == null) {
+    yield put(translationTextSubmitFailure('You must enter something to neutralize.'));
+    return;
   }
   const data: InputSentence[] = sentences.map((sentence) => {
     return {
-      src: `${sentence}.`,
+      src: `${sentence}`,
       id: MODEL_ID,
     };
   });
@@ -110,7 +117,11 @@ function* executeSubmitBiasedText({
     );
     yield put(translationTextNeutralizeSuccess(result));
   } catch (e) {
-    yield put({ type: 'TRANSLATION_SUBMIT_FAILURE_ACTION', message: e.message });
+    yield put(
+      translationTextSubmitFailure(
+        'Something went wrong when calling our API. Please try again later.',
+      ),
+    );
   }
 }
 
@@ -125,6 +136,10 @@ export function* watchTranslationSubmitSaga() {
 /**
  * Selectors
  */
+export function selectErrorValue(state: State) {
+  return state.Translation.error;
+}
+
 export function selectInputValue(state: State) {
   return state.Translation.input;
 }

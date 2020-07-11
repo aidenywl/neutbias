@@ -6,7 +6,7 @@ import styles from './styles.css';
 export interface Props {
   children: ReactNode;
   className?: string;
-  color?: 'darkBlue90' | 'darkGrey' | 'grey80' | 'lightBlue' | 'standardGrey' | 'white';
+  color?: 'darkBlue90' | 'darkGrey' | 'grey80' | 'lightBlue' | 'red90' | 'standardGrey' | 'white';
   decoration?: 'none';
   inline?: boolean;
   overflow?: 'normal' | 'breakWord';
@@ -36,6 +36,7 @@ const Text: FunctionComponent<Props> = ({
         [styles.colorDarkGrey]: color === 'darkGrey',
         [styles.colorLightGrey]: color === 'grey80',
         [styles.colorLightBlue]: color === 'lightBlue',
+        [styles.colorRed90]: color === 'red90',
         [styles.colorStandardGrey]: color === 'standardGrey',
         [styles.colorWhite]: color === 'white',
       },

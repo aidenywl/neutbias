@@ -21,6 +21,7 @@ interface Props {
   classNameTextArea?: string;
   classNameTextAreaWrapper?: string;
   disabled?: boolean;
+  error?: string;
   label?: string;
   maxLength?: number;
   minimizeLabel?: boolean;
@@ -57,6 +58,7 @@ const TextArea: FunctionComponent<Props> = (props) => {
     classNameTextArea = '',
     classNameTextAreaWrapper = '',
     disabled = false,
+    error,
     label,
     maxLength,
     minimizeLabel = false,
@@ -101,6 +103,8 @@ const TextArea: FunctionComponent<Props> = (props) => {
     }
   }, [rows, value]);
 
+  const showMaxLength = maxLength != null;
+
   const onTextAreaBlur = () => {
     if (onBlur) {
       onBlur();
@@ -123,7 +127,14 @@ const TextArea: FunctionComponent<Props> = (props) => {
 
   const containerClassName = classNames(styles.container, className);
 
-  const textAreaWrapperClassName = classNames(styles.textAreaWrapper, classNameTextAreaWrapper);
+  const errorClassName = classNames(
+    showMaxLength ? styles.errorTextWithMaxLength : styles.errorText,
+  );
+  const textAreaWrapperClassName = classNames(
+    styles.textAreaWrapper,
+    { [styles.textAreaWrapperError]: error },
+    classNameTextAreaWrapper,
+  );
 
   const textAreaClassName = classNames(
     styles.textArea,
@@ -161,6 +172,25 @@ const TextArea: FunctionComponent<Props> = (props) => {
           value={value}
         />
       </div>
+      <div className={styles.details}>
+        {error && (
+          <Text color="red90" className={errorClassName} inline={true} singleline={true} size="s">
+            {error}
+          </Text>
+        )}
+        {showMaxLength && (
+          <Text
+            className={styles.maxLength}
+            color="darkBlue90"
+            inline={true}
+            singleline={true}
+            size="s"
+            textAlign="right"
+          >
+            {`${value.length}/${String(maxLength)}`}
+          </Text>
+        )}
+      </div>
     </div>
   );
 };
@@ -195,7 +225,7 @@ const TextAreaLabel: FunctionComponent<TextAreaLabelProps> = ({
       className={labelClassName}
       inline={true}
       singleline={true}
-      size={shouldMinimizeLabel ? 's' : 'm'}
+      size={shouldMinimizeLabel ? 'm' : 'l'}
     >
       {label}
     </Text>
