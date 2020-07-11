@@ -7,7 +7,7 @@ import styles from './styles.css';
 
 interface Props {
   className?: string;
-  color?: 'white';
+  color?: 'darkBlue90' | 'white';
   size?: 's' | 'm' | 'l';
 }
 
@@ -23,6 +23,9 @@ const Loading: FunctionComponent<Props> = ({ className = '', color = 'white', si
   switch (color) {
     case 'white':
       stroke = constants.white;
+      break;
+    case 'darkBlue90':
+      stroke = constants.darkBlue90;
       break;
     default:
       stroke = constants.white;

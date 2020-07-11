@@ -66,7 +66,7 @@ const Button: FunctionComponent<Props> = ({
     className,
   );
 
-  const loadingColor = 'white';
+  const loadingColor = 'darkBlue90';
 
   return (
     <button
