@@ -76,7 +76,7 @@ const BottomSection: FunctionComponent<{}> = () => {
           Project Poster
         </Button>
         <Button className={styles.button} onClick={onDraftPaperClick} type="mainAction">
-          Draft Paper
+          Project Paper
         </Button>
       </div>
     );
