@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react';
 
-import Anchor from '../Anchor';
+import Anchor from '../../design-system/Anchor';
 import BiasCard from '../BiasCard';
-import Button from '../Button';
-import Heading from '../Heading';
-import Section from '../Section';
-import Text from '../Text';
+import Button from '../../design-system/Button';
+import Heading from '../../design-system/Heading';
+import Section from '../../design-system/Section';
+import Text from '../../design-system/Text';
 
 import { BIASES } from '../../constants/bias';
 

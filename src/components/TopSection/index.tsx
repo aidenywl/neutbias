@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import React, { FunctionComponent, SyntheticEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Button from '../Button';
-import Heading from '../Heading';
-import Section from '../Section';
-import TextArea from '../TextArea';
+import Button from '../../design-system/Button';
+import Heading from '../../design-system/Heading';
+import Section from '../../design-system/Section';
+import TextArea from '../../design-system/TextArea';
 
 import {
   translationBiasTextFormUpdate,
@@ -47,7 +47,7 @@ const TopSection: FunctionComponent<{}> = () => {
         <TextArea
           className={styles.textarea}
           error={error}
-          label="Enter Text to Neutralize"
+          label="Enter Biased Sentence to Neutralize"
           maxLength={1000}
           onChange={onBiasedInputChange}
           rows={{ minCount: 3, maxCount: 6, type: 'dynamic' }}

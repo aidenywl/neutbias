@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FunctionComponent, useState, useEffect } from 'react';
 
-import Heading from '../Heading';
+import Heading from '../../design-system/Heading';
 
 import styles from './styles.css';
 

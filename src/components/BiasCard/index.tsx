@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FunctionComponent } from 'react';
 
-import Text from '../Text';
+import Text from '../../design-system/Text';
 
 import styles from './styles.css';
 

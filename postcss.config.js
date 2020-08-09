@@ -1,4 +1,4 @@
-const constants = require('./src/components/constants.js');
+const constants = require('./src/design-system/constants.js');
 
 module.exports = () => ({
   plugins: [
