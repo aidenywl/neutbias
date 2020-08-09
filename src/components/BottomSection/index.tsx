@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
+import Anchor from '../Anchor';
 import BiasCard from '../BiasCard';
 import Button from '../Button';
 import Heading from '../Heading';
@@ -58,26 +59,25 @@ const BottomSection: FunctionComponent<{}> = () => {
     );
   };
 
-  const onPosterButtonClick = () => {
-    window.open('https://stanford-cs221.github.io/autumn2019-extra/posters/144.pdf', '_blank');
-  };
-
-  const onDraftPaperClick = () => {
-    window.open(
-      'https://drive.google.com/file/d/1TIZ1D4o9bT9QvZruH6c2uwWod0V0mLJM/view?usp=sharing',
-      '_blank',
-    );
-  };
-
   const renderLinks = () => {
     return (
       <div className={styles.links}>
-        <Button className={styles.button} onClick={onPosterButtonClick} type="mainAction">
-          Project Poster
-        </Button>
-        <Button className={styles.button} onClick={onDraftPaperClick} type="mainAction">
-          Project Paper
-        </Button>
+        <Anchor
+          target="_blank"
+          to="https://stanford-cs221.github.io/autumn2019-extra/posters/144.pdf"
+        >
+          <Button className={styles.button} type="mainAction">
+            Project Poster
+          </Button>
+        </Anchor>
+        <Anchor
+          target="_blank"
+          to="https://drive.google.com/file/d/1TIZ1D4o9bT9QvZruH6c2uwWod0V0mLJM/view?usp=sharing"
+        >
+          <Button className={styles.button} type="mainAction">
+            Project Paper
+          </Button>
+        </Anchor>
       </div>
     );
   };
