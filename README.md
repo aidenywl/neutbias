@@ -52,3 +52,7 @@ Although Jest is set up, minimal tests have been written for this static page.
 - Jest is set up and ready to go via `yarn test`.
 - React Testing Library is used to write tests instead of enzyme for flexibility and being able to better simulate the DOM as seen by a user.
 - Using RTL allows us to move away from snapshot testing and test each component mocking components as required.
+
+### Backend
+
+The backend is running on flask on a GCP compute server serving the [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py) model trained on the corpus data.
