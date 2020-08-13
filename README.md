@@ -55,4 +55,4 @@ Although Jest is set up, minimal tests have been written for this static page.
 
 ### Backend
 
-The backend is running on flask on a GCP compute server serving the [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py) model trained on the corpus data.
+The backend is running on Flask on a GCP compute server serving the [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py) model trained on the corpus data.
