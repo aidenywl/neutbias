@@ -4,6 +4,8 @@ This website demos the NLP model created from my artificial intelligence project
 
 The model is trained on Stanford's Wikipedia Neutrality Corpus.
 
+Find out more about the project here: https://aidenywl.github.io/neutbias/
+
 ## Getting Started
 
 ### Editor Set-up
