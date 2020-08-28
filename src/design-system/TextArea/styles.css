@@ -34,17 +34,14 @@
 }
 
 .textArea:disabled {
-  color: $darkBlue90;
   cursor: not-allowed;
+  -webkit-text-fill-color: $darkBlue90;
+  opacity: 1; /* required on iOS */
 }
 
 .textArea::placeholder {
   opacity: 0;
   transition: opacity 0.25s ease;
-}
-
-textArea:disabled {
-  color: $darkGrey;
 }
 
 .textArea:focus {

@@ -79,26 +79,53 @@
 }
 
 .sizeL {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 .sizeM {
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.sizeS {
   font-size: 14px;
   line-height: 22px;
 }
 
-.sizeXS {
+.sizeS {
   font-size: 12px;
   line-height: 16px;
 }
 
-.sizeXXS {
+.sizeXS {
   font-size: 10px;
   line-height: 12px;
+}
+
+.sizeXXS {
+  font-size: 8px;
+  line-height: 10px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .sizeL {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .sizeM {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .sizeS {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .sizeXS {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .sizeXXS {
+    font-size: 10px;
+    line-height: 12px;
+  }
 }
