@@ -1,0 +1,15 @@
+.container {
+  -webkit-overflow-scrolling: touch;
+}
+
+.containerHorizontal {
+  overflow-x: auto;
+}
+
+.containerVertical {
+  overflow-y: auto;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
