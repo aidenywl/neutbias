@@ -74,9 +74,10 @@ const TopSection: FunctionComponent<{}> = () => {
       <Heading className={styles.heading} hyphensNone color="white70" textAlign="center" level="3">
         Neutralize Single-Word English Linguistic Bias with a Bidirectional LSTM NLP model.
         <br />
+        <br />
         {'This model is trained to neutralize '}
         <u className={styles.headingLink} onClick={onAboutClick}>
-          three types of biases based on the Wiki Neutrality Corpus with a BLEU score of 89.87 in our final model.
+          three types of biases based on the Wiki Neutrality Corpus with a BLEU score of 89.87 in our final model. Try it out below! (It might take 10-15 seconds to start up on the first run).
         </u>
       </Heading>
       <div className={styles.content}>
