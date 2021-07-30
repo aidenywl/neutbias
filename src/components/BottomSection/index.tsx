@@ -80,6 +80,14 @@ const BottomSection: FunctionComponent<{}> = () => {
             Project Paper
           </Button>
         </Anchor>
+        <Anchor
+          target="_blank"
+          to="https://github.com/aidenywl/cs221biasproject"
+        >
+          <Button className={styles.button} type="mainAction">
+            Model Github
+          </Button>
+        </Anchor>
       </div>
       </>
     );
