@@ -36,7 +36,7 @@ export async function sendRequest(url: string, options: RequestOptions): Promise
     const qs = query ? `?${queryString.stringify(query)}` : '';
     response = await fetch(`${url}${qs}`, {
       body: data ? JSON.stringify(data) : null,
-      credentials: 'include',
+      credentials: 'omit',
       headers: {
         ...headers,
         'Content-Type': 'application/json',

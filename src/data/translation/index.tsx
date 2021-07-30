@@ -14,7 +14,7 @@ import {
 import { Action, State } from '../types';
 
 const MODEL_ID = 100;
-const API_URL = 'https://www.proximahand.com/translate';
+const API_URL = 'https://translate-v1-okehwkqpmq-ue.a.run.app/translate';
 
 /**
  * Actions
