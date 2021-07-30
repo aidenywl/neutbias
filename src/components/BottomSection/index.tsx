@@ -61,6 +61,8 @@ const BottomSection: FunctionComponent<{}> = () => {
 
   const renderLinks = () => {
     return (
+      <>
+      <Heading level="2">Find out more about the project</Heading>
       <div className={styles.links}>
         <Anchor
           target="_blank"
@@ -79,6 +81,7 @@ const BottomSection: FunctionComponent<{}> = () => {
           </Button>
         </Anchor>
       </div>
+      </>
     );
   };
   return (
@@ -87,12 +90,6 @@ const BottomSection: FunctionComponent<{}> = () => {
       <div className={styles.biasCards}>{renderContent()}</div>
       {renderAbout()}
       {renderLinks()}
-      <div>
-        <Text size="xxs" inline>
-          Model accuracy is written incorrectly in the poster. Refer to the paper for the correct
-          accuracy
-        </Text>
-      </div>
     </Section>
   );
 };

@@ -76,7 +76,7 @@ const TopSection: FunctionComponent<{}> = () => {
         <br />
         {'This model is trained to neutralize '}
         <u className={styles.headingLink} onClick={onAboutClick}>
-          three types of biases.
+          three types of biases based on the Wiki Neutrality Corpus with a BLEU score of 89.87 in our final model.
         </u>
       </Heading>
       <div className={styles.content}>
